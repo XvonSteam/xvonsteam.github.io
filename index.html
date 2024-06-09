@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Web Profile | Yenzu_ai</title>
-	<link rel="icon" href="assets/images/icon.png">
+	<title>Web Profile | Yenzu ai</title>
+	<link rel="icon" href="public/assets/images/icon.png">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://db.onlinewebfonts.com/c/5bc1a22c8fb6988fbbdadd5d116a759e?family=Arkeo+BT+W01+Condensed" rel="stylesheet">
 	<style>
 		/* Custom styles */
 		.navbar-brand {
@@ -27,7 +28,7 @@
 			color: rgba(255, 255, 255, 0.7);
 		}
 
-		.navbar-text{
+		.navbar-text {
 			color: #fff;
 		}
 
@@ -91,7 +92,7 @@
 		}
 
 		.work-experience-date {
-			font-size: 0.9em;
+			font-size: 14px;
 			font-weight: bold;
 			margin-right: 20px;
 			color: #fff;
@@ -106,10 +107,10 @@
 		}
 
 		/* Skill section styles */
-
 		.skills {
 			text-align: center;
 			margin-top: 50px;
+			padding: 20px;
 		}
 
 		.skills h2 {
@@ -126,6 +127,17 @@
 
 		.skill-icons img {
 			margin: 10px;
+			transition: box-shadow 0.3s, transform 0.3s;
+		}
+
+		.skill-icons img:hover {
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+			transform: scale(1.1);
+		}
+		
+		.skill-icons p {
+			margin-top: 8px;
+			font-family: 'Arkeo BT W01 Condensed', sans-serif;
 		}
 
 		.contact {
@@ -163,6 +175,43 @@
 			text-decoration: underline;
 		}
 
+		.font-xs {
+			font-family: 'Arkeo BT W01 Condensed', sans-serif;
+		}
+
+		<!-- Team Partner styles -->
+		.team-partner {
+			text-align: center;
+			margin-top: 50px;
+			padding: 20px;
+		}
+
+		.team-partner h2 {
+			color: #fff;
+			margin-bottom: 40px;
+		}
+
+		.partner-profiles {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.partner {
+			text-align: center;
+			margin: 20px;
+			color: #fff;
+		}
+
+		.partner-name {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		.partner-role {
+			font-size: 0.8em;
+			color: #888;
+		}
 
 	</style>
 </head>
@@ -171,7 +220,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container m-3">
 			<!-- Logo -->
-			<a class="navbar-brand" href="#"><img src="assets/images/icon.png" width="40" height="40"> XvonSteam Tech</a>
+			<a class="navbar-brand" href="#"><img src="public/assets/images/icon.png" width="40" height="40"> XvonSteam Tech</a>
 			<!-- Name on the right side -->
 			<div class="navbar-text ">
 				<span>Yenzu Ai</span>
@@ -181,7 +230,7 @@
 
 	<div class="container">
 		<div class="avatar">
-			<img src="assets/images/foto.png" alt="Profile Picture">
+			<img src="public/assets/images/foto.png" alt="Profile Picture">
 			<div class="avatar-info">
 				<p class="avatar-name">Fanny Ruzaini Rahmanna Ari S.Kom</p>
 				<p class="avatar-role">Web Developer</p>
@@ -189,19 +238,19 @@
 		</div>
 
 		<div class="about">
-			<p>About Me</p>
-			<p style="font-size:10px;">Saya seorang web developer yang telah menjalankan karir freelance selama 4 tahun selama masa kuliah. Saya memiliki pengalaman dalam mengembangkan berbagai jenis situs web dan aplikasi web. Selain itu, saya juga memiliki keahlian dalam pemrograman frontend dan backend. Saya sangat antusias dalam mempelajari teknologi terbaru dan menciptakan solusi kreatif untuk masalah yang kompleks.</p>
+			<p class="h2">About Me</p>
+			<p style="font-size:14px;">Saya seorang web developer yang telah menjalankan karir freelance selama 4 tahun selama masa kuliah. Saya memiliki pengalaman dalam mengembangkan berbagai jenis situs web dan aplikasi web. Selain itu, saya juga memiliki keahlian dalam pemrograman frontend dan backend. Saya sangat antusias dalam mempelajari teknologi terbaru dan menciptakan solusi kreatif untuk masalah yang kompleks.</p>
 		</div>
 
 		<div class="work-experience">
-			<h2 class="text-center mb-5" style="font-size: 2em;">Work Experience</h2>
+			<h2 class="text-center mb-5 h2">Work Experience</h2>
 			<ul class="work-experience-list offset-lg-3">
 				<li class="work-experience-item">
 					<span class="work-experience-date">Feb 2020 - Feb 2022</span>
 					<div class="work-experience-content">
 						<h3>Web Developer</h3>
 						<p>Lojikala.io, Tangerang, Jawa Barat</p>
-						<ul>
+						<ul style="font-size:12px;">
 							<li>Pembuatan Website Merdisihombing Foundation, Language PHP</li>
 							<li>Pembuatan E-Commers Merdisihombing Foundation, Language PHP</li>
 							<li>Pembuatan Website Agwal offical, Language PHP</li>
@@ -216,7 +265,7 @@
 					<div class="work-experience-content">
 						<h3>Web Developer</h3>
 						<p>Xvonsteam Tech, Kota Madiun, Jawa Timur</p>
-						<ul>
+						<ul style="font-size:12px;">
 							<li>Pembuatan Aplikasi Kasir Toko, Language PHP Framework Ci3</li>
 							<li>Pembuatan Aplikasi Kasir Showroom, Language PHP Framework Ci3</li>
 							<li>Pembuatan Aplikasi Antrian, Language PHP Framework Ci4</li>
@@ -242,39 +291,123 @@
 			<h2>Skills</h2>
 			<div class="container">
 				<div class="row skill-icons">
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML Icon" class="img-fluid">
+						<p>HTML</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon" class="img-fluid">
+						<p>CSS</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP Icon" class="img-fluid">
+						<p>PHP</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Icon" class="img-fluid">
+						<p>JavaScript</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js Icon" class="img-fluid">
+						<p>React.js</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/next.png" alt="Next.js Icon" class="img-fluid">
+						<p>Next.js</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js Icon" class="img-fluid">
+						<p>Node.js</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/wordpress.png" alt="WordPress Icon" class="img-fluid">
+						<p>WordPress</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/fluency/48/laravel.png" alt="Laravel Icon" class="img-fluid">
+						<p>Laravel</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/?size=100&id=r4UrHt1gLC2t&format=png&color=000000" width="50" alt="CodeIgniter Icon" class="img-fluid">
+						<p>CodeIgniter</p>
 					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3">
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
 						<img src="https://img.icons8.com/color/48/000000/kotlin.png" alt="Kotlin Icon" class="img-fluid">
+						<p>Kotlin</p>
 					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/coreldraw.png" alt="CorelDRAW Icon" class="img-fluid">
+						<p>CorelDRAW</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/fluency/48/000000/filmora.png" alt="Filmora Icon" class="img-fluid">
+						<p>Filmora</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/adobe-xd.png" alt="Adobe XD Icon" class="img-fluid">
+						<p>Adobe XD</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma Icon" class="img-fluid">
+						<p>Figma</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=13674&format=png&color=000000" alt="Microsoft Word Icon" class="img-fluid">
+						<p>Microsoft Word</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=13654&format=png&color=000000" alt="Microsoft Excel Icon" class="img-fluid">
+						<p>Microsoft Excel</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=ifP93G7BXUhU&format=png&color=000000" alt="Microsoft PowerPoint Icon" class="img-fluid">
+						<p>Microsoft PowerPoint</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=40669&format=png&color=000000" alt="C++ Icon" class="img-fluid">
+						<p>C++</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png&color=000000" alt="C++ Icon" class="img-fluid">
+						<p>C++</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=114474&format=png&color=000000" alt="Json Icon" class="img-fluid">
+						<p>Json</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express JS Icon" class="img-fluid">
+						<p>Express JS</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=QBqFNfPPB2Kx&format=png&color=000000" alt="Sass Icon" class="img-fluid">
+						<p>Sass</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git Icon" class="img-fluid">
+						<p>Git</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="team-partner text-center">
+			<h2>Team Partner</h2>
+			<div class="partner-profiles">
+				<div class="partner">
+					<img src="https://assets.riplabs.id/images/riplabs/Logo%20RipLabs.png" class="mb-2 img-fluid" style="width:100px; height:50px;" alt="Partner 1">
+					<p class="partner-name">RipLabs</p>
+					<p class="partner-role">Web Devoloper</p>
+				</div>
+				<div class="partner">
+					<img src="https://xvonsteam.github.io/assets/images/icon.png" class="mb-2 img-fluid" style="width:100px; height:90px;"  alt="Partner 2">
+					<p class="partner-name">Xvonsteam Tech</p>
+					<p class="partner-role">Founder & Web Devoloper</p>
+				</div>
+				<div class="partner">
+					<img src="https://pbs.twimg.com/profile_images/1488815917932769282/M1HZJ6kt_400x400.jpg" class="mb-2 img-fluid" style="width:100px; height:80px;"  alt="Partner 2">
+					<p class="partner-name">Matakala io</p>
+					<p class="partner-role">Web Devoloper</p>
 				</div>
 			</div>
 		</div>

@@ -3,17 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Web Profile | Yenzu</title>
+	<title>{title}</title>
 	<link rel="icon" href="assets/images/icon.png">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://db.onlinewebfonts.com/c/5bc1a22c8fb6988fbbdadd5d116a759e?family=Arkeo+BT+W01+Condensed" rel="stylesheet">
 	<style>
-		/* Custom styles */
+
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Inter', sans-serif; /* Use Inter font */
+		}
+
 		.navbar-brand {
 			margin-right: auto;
-			color: #fff;
 			font-family: 'Inter', sans-serif; /* Use Inter font */
+			color: #fff;
 		}
 
 		.navbar {
@@ -21,23 +27,15 @@
 		}
 
 		.navbar-nav .nav-link {
-			color: #fff;
+			color: #000;
 		}
 
 		.navbar-nav .nav-link:hover {
 			color: rgba(255, 255, 255, 0.7);
 		}
 
-		.navbar-text {
+		.navbar-text{
 			color: #fff;
-		}
-
-		body {
-			background-color: #000;
-			color: #fff;
-			margin: 0;
-			padding: 0;
-			font-family: 'Inter', sans-serif; /* Use Inter font */
 		}
 
 		.avatar {
@@ -66,7 +64,6 @@
 
 		.avatar-role {
 			font-size: 0.8em; /* Smaller font size for role/avatar-role */
-			color: #888; /* Dimmer text color */
 		}
 
 		.about {
@@ -77,7 +74,7 @@
 			margin-right: auto; /* Center about text horizontally */
 		}
 
-		/* Work Experience styles */
+
 		.work-experience {
 			position: relative;
 			max-width: 800px;
@@ -92,53 +89,44 @@
 		}
 
 		.work-experience-date {
+			font-size: 0.9em;
 			font-size: 14px;
 			font-weight: bold;
 			margin-right: 20px;
-			color: #fff;
 			width: 100px;
 		}
 
 		.work-experience-content {
 			flex: 1;
-			color: #fff;
 			text-align: left;
 			font-size: 10px;
 		}
 
-		/* Skill section styles */
 		.skills {
 			text-align: center;
 			margin-top: 50px;
 			padding: 20px;
 		}
 
-		.skills h2 {
-			color: #fff;
-		}
-
-		.skill-icons {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			margin-top: 20px;
+		.skill-icons .skill-icon {
+			overflow: hidden; /* Mengatasi overflow dari gambar */
+			margin: 0 auto; /* Pusatkan ikon */
 		}
 
 		.skill-icons img {
-			margin: 10px;
-			transition: box-shadow 0.3s, transform 0.3s;
+			width: 30%; /* Biar gambar fill dalam lingkaran */
+			height: auto; /* Sesuaikan proporsi gambar */
 		}
 
 		.skill-icons img:hover {
-			box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 			transform: scale(1.1);
 		}
-		
+
 		.skill-icons p {
 			margin-top: 8px;
 			font-family: 'Arkeo BT W01 Condensed', sans-serif;
 		}
+
 
 		.contact {
 			text-align: center;
@@ -146,7 +134,6 @@
 		}
 
 		.contact h2 {
-			color: #fff;
 			margin-bottom: 20px;
 		}
 
@@ -163,11 +150,9 @@
 		.contact-info strong {
 			font-weight: bold;
 			margin-right: 5px;
-			color: #fff;
 		}
 
 		.contact-info a {
-			color: #fff;
 			text-decoration: none;
 		}
 
@@ -179,7 +164,7 @@
 			font-family: 'Arkeo BT W01 Condensed', sans-serif;
 		}
 
-		<!-- Team Partner styles -->
+
 		.team-partner {
 			text-align: center;
 			margin-top: 50px;
@@ -187,7 +172,6 @@
 		}
 
 		.team-partner h2 {
-			color: #fff;
 			margin-bottom: 40px;
 		}
 
@@ -200,7 +184,6 @@
 		.partner {
 			text-align: center;
 			margin: 20px;
-			color: #fff;
 		}
 
 		.partner-name {
@@ -210,14 +193,44 @@
 
 		.partner-role {
 			font-size: 0.8em;
-			color: #888;
+		}
+
+		#checkbox {
+			display: none;
+		}
+
+		#toggle-background {
+			position: relative;
+			width: fit-content;
+			padding: 10px 20px;
+			background-color: rgb(46, 46, 46);
+			border-radius: 50px;
+			z-index: 1;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			color: white;
+			font-size: 0.9em;
+			font-weight: 600;
+			transition: all 0.3s;
+		}
+
+		#toggle-background svg path {
+			fill: white;
+		}
+
+		#toggle-background.active {
+			background-color: rgb(174, 0, 255);
+			box-shadow: 0px 0px 40px rgba(174, 0, 255, 0.438);
 		}
 
 	</style>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav class="navbar bg-dark">
 		<div class="container m-3">
 			<!-- Logo -->
 			<a class="navbar-brand" href="#"><img src="assets/images/icon.png" width="40" height="40"> XvonSteam Tech</a>
@@ -225,8 +238,15 @@
 			<div class="navbar-text ">
 				<span>Yenzu Ai</span>
 			</div>
+			<!-- Background Color Switch Button -->
+			<button id="toggle-background" class="btn btn-outline-secondary ms-3">Swicth
+				<svg class="slider" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+					<path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"></path>
+				</svg>
+			</button>
 		</div>
 	</nav>
+
 
 	<div class="container">
 		<div class="avatar">
@@ -291,105 +311,142 @@
 			<h2>Skills</h2>
 			<div class="container">
 				<div class="row skill-icons">
+					<!-- Programming Languages -->
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML Icon" class="img-fluid skill-icon">
 						<p>HTML</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon" class="img-fluid skill-icon">
 						<p>CSS</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP Icon" class="img-fluid">
-						<p>PHP</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Icon" class="img-fluid skill-icon">
 						<p>JavaScript</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP Icon" class="img-fluid skill-icon">
+						<p>PHP</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=40669&format=png&color=000000" alt="C++ Icon" class="img-fluid skill-icon">
+						<p>C++</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png&color=000000" alt="Mysql Icon" class="img-fluid skill-icon">
+						<p>MySQL</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/kotlin.png" alt="Kotlin Icon" class="img-fluid skill-icon">
+						<p>Kotlin</p>
+					</div>
+
+					<!-- Frameworks and Libraries -->
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js Icon" class="img-fluid skill-icon">
 						<p>React.js</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/next.png" alt="Next.js Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/next.png" alt="Next.js Icon" class="img-fluid skill-icon">
 						<p>Next.js</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js Icon" class="img-fluid">
+						<img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js Icon" class="img-fluid skill-icon">
 						<p>Node.js</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/wordpress.png" alt="WordPress Icon" class="img-fluid">
-						<p>WordPress</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/fluency/48/laravel.png" alt="Laravel Icon" class="img-fluid">
+						<img src="https://img.icons8.com/fluency/48/laravel.png" alt="Laravel Icon" class="img-fluid skill-icon">
 						<p>Laravel</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=100&id=r4UrHt1gLC2t&format=png&color=000000" width="50" alt="CodeIgniter Icon" class="img-fluid">
+						<img src="https://img.icons8.com/?size=100&id=r4UrHt1gLC2t&format=png&color=000000" width="50" alt="CodeIgniter Icon" class="img-fluid skill-icon">
 						<p>CodeIgniter</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/kotlin.png" alt="Kotlin Icon" class="img-fluid">
-						<p>Kotlin</p>
+						<img src="https://img.icons8.com/?size=48&id=ewGOClUtmFX4&format=png&color=000000" width="50" alt="Flask Icon" class="img-fluid skill-icon">
+						<p>Flask</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/coreldraw.png" alt="CorelDRAW Icon" class="img-fluid">
-						<p>CorelDRAW</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/fluency/48/000000/filmora.png" alt="Filmora Icon" class="img-fluid">
-						<p>Filmora</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/adobe-xd.png" alt="Adobe XD Icon" class="img-fluid">
-						<p>Adobe XD</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma Icon" class="img-fluid">
-						<p>Figma</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=13674&format=png&color=000000" alt="Microsoft Word Icon" class="img-fluid">
-						<p>Microsoft Word</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=13654&format=png&color=000000" alt="Microsoft Excel Icon" class="img-fluid">
-						<p>Microsoft Excel</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=ifP93G7BXUhU&format=png&color=000000" alt="Microsoft PowerPoint Icon" class="img-fluid">
-						<p>Microsoft PowerPoint</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=40669&format=png&color=000000" alt="C++ Icon" class="img-fluid">
-						<p>C++</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png&color=000000" alt="C++ Icon" class="img-fluid">
-						<p>C++</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=114474&format=png&color=000000" alt="Json Icon" class="img-fluid">
-						<p>Json</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express JS Icon" class="img-fluid">
+						<img src="https://img.icons8.com/?size=48&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express JS Icon" class="img-fluid skill-icon">
 						<p>Express JS</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=QBqFNfPPB2Kx&format=png&color=000000" alt="Sass Icon" class="img-fluid">
+						<img src="https://img.icons8.com/?size=48&id=QBqFNfPPB2Kx&format=png&color=000000" alt="Sass Icon" class="img-fluid skill-icon">
 						<p>Sass</p>
 					</div>
 					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git Icon" class="img-fluid">
+						<img src="https://img.icons8.com/?size=48&id=HKNzD81eiiSc&format=png&color=000000" alt="Jquery Icon" class="img-fluid skill-icon">
+						<p>Jquery</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwinds Icon" class="img-fluid skill-icon">
+						<p>Tailwinds</p>
+					</div>
+
+
+					<!-- Tools -->
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/wordpress.png" alt="WordPress Icon" class="img-fluid skill-icon">
+						<p>WordPress</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git Icon" class="img-fluid skill-icon">
 						<p>Git</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=114474&format=png&color=000000" alt="Json Icon" class="img-fluid skill-icon">
+						<p>Json</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=13444&format=png&color=000000" alt="Arduino Icon" class="img-fluid skill-icon">
+						<p>Arduino</p>
+					</div>
+
+					<!-- Applications -->
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/coreldraw.png" alt="CorelDRAW Icon" class="img-fluid skill-icon">
+						<p>CorelDRAW</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/fluency/48/000000/filmora.png" alt="Filmora Icon" class="img-fluid skill-icon">
+						<p>Filmora</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/adobe-xd.png" alt="Adobe XD Icon" class="img-fluid skill-icon">
+						<p>Adobe XD</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma Icon" class="img-fluid skill-icon">
+						<p>Figma</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=13674&format=png&color=000000" alt="Microsoft Word Icon" class="img-fluid skill-icon">
+						<p>Microsoft Word</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=13654&format=png&color=000000" alt="Microsoft Excel Icon" class="img-fluid skill-icon">
+						<p>Microsoft Excel</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=ifP93G7BXUhU&format=png&color=000000" alt="Microsoft PowerPoint Icon" class="img-fluid skill-icon">
+						<p>Microsoft PowerPoint</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=48455&format=png&color=000000" alt="Visual Code Icon" class="img-fluid skill-icon">
+						<p>Visual Code</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=6RHskkZGRABM&format=png&color=000000" alt="Sublime Text Icon" class="img-fluid skill-icon">
+						<p>Sublime Text</p>
+					</div>
+					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+						<img src="https://img.icons8.com/?size=48&id=AZOZNnY73haj&format=png&color=000000" alt="Github Icon" class="img-fluid skill-icon">
+						<p>Github</p>
 					</div>
 				</div>
 			</div>
 		</div>
+
 
 		<div class="team-partner text-center">
 			<h2>Team Partner</h2>
@@ -433,6 +490,37 @@
 	<!-- Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+	<script>
+		const toggleBackgroundBtn = document.getElementById('toggle-background');
+		const body = document.body;
+
+    // Set initial background color and text color
+		if (toggleBackgroundBtn.classList.contains('active')) {
+        toggleColors(true); // Activate colors
+    } else {
+        toggleColors(false); // Deactivate colors
+    }
+
+    toggleBackgroundBtn.addEventListener('click', () => {
+    	toggleBackgroundBtn.classList.toggle('active');
+    	if (toggleBackgroundBtn.classList.contains('active')) {
+            toggleColors(true); // Activate colors
+        } else {
+            toggleColors(false); // Deactivate colors
+        }
+    });
+
+    function toggleColors(isActive) {
+    	if (isActive) {
+    		body.style.backgroundColor = 'white';
+    		body.style.color = 'black';
+    	} else {
+    		body.style.backgroundColor = 'black';
+    		body.style.color = 'white';
+    	}
+    }
+</script>
+
 
 </body>
 </html>

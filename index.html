@@ -1,511 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Web Profile | Yenzu ai</title>
-	<link rel="icon" href="assets/images/icon.png">
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://db.onlinewebfonts.com/c/5bc1a22c8fb6988fbbdadd5d116a759e?family=Arkeo+BT+W01+Condensed" rel="stylesheet">
-	<style>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil Saya - Tabler</title>
+    <link href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container py-4">
 
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: 'Inter', sans-serif; /* Use Inter font */
-		}
+        <!-- Data Diri -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3 class="card-title">👤 Data Diri</h3>
+          </div>
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto mx-2">
+                <span class="avatar avatar-xl" style="background-image: url('assets/images/foto.png')"></span>
+              </div>
+              <div class="col">
+                <h3 class="mb-0">Fanny Ruzaini Rahmanna Ari S.Kom</h3>
+                <div class="text-secondary">Web Developer | Madiun, Jawa Timur</div>
+                <div>Email: xvonsteam@gmail.com</div>
+                <div>Website: <a href="https://xvonsteam.github.io">xvonsteam.github.io</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-		.navbar-brand {
-			margin-right: auto;
-			font-family: 'Inter', sans-serif; /* Use Inter font */
-			color: #fff;
-		}
-
-		.navbar {
-			background-color: transparent;
-		}
-
-		.navbar-nav .nav-link {
-			color: #000;
-		}
-
-		.navbar-nav .nav-link:hover {
-			color: rgba(255, 255, 255, 0.7);
-		}
-
-		.navbar-text{
-			color: #fff;
-		}
-
-		.avatar {
-			display: flex;
-			align-items: center;
-			justify-content: center; /* Center avatar horizontally */
-			flex-direction: column; /* Display name and role below avatar */
-			margin-top: 50px; /* Set top margin for avatar */
-		}
-
-		.avatar img {
-			width: 100px; /* Adjust according to avatar image width */
-			height: 100px; /* Adjust according to avatar image height */
-			border-radius: 50%; /* Make avatar image round */
-			margin-bottom: 10px; /* Space between image and text */
-		}
-
-		.avatar-info {
-			text-align: center; /* Center text below avatar */
-		}
-
-		.avatar-name {
-			font-weight: bold; /* Bold name text */
-			margin-bottom: 5px; /* Set bottom margin between name and role */
-		}
-
-		.avatar-role {
-			font-size: 0.8em; /* Smaller font size for role/avatar-role */
-		}
-
-		.about {
-			text-align: center; /* Center about text */
-			margin-top: 20px; /* Set top margin for about text */
-			max-width: 600px; /* Limit width of about text */
-			margin-left: auto; /* Center about text horizontally */
-			margin-right: auto; /* Center about text horizontally */
-		}
-
-
-		.work-experience {
-			position: relative;
-			max-width: 800px;
-			margin: 50px auto;
-			list-style: none;
-			padding: 0;
-		}
-
-		.work-experience-item {
-			display: flex;
-			margin-bottom: 50px;
-		}
-
-		.work-experience-date {
-			font-size: 0.9em;
-			font-size: 14px;
-			font-weight: bold;
-			margin-right: 20px;
-			width: 100px;
-		}
-
-		.work-experience-content {
-			flex: 1;
-			text-align: left;
-			font-size: 10px;
-		}
-
-		.skills {
-			text-align: center;
-			margin-top: 50px;
-			padding: 20px;
-		}
-
-		.skill-icons .skill-icon {
-			overflow: hidden; /* Mengatasi overflow dari gambar */
-			margin: 0 auto; /* Pusatkan ikon */
-		}
-
-		.skill-icons img {
-			width: 30%; /* Biar gambar fill dalam lingkaran */
-			height: auto; /* Sesuaikan proporsi gambar */
-		}
-
-		.skill-icons img:hover {
-			transform: scale(1.1);
-		}
-
-		.skill-icons p {
-			margin-top: 8px;
-			font-family: 'Arkeo BT W01 Condensed', sans-serif;
-		}
-
-
-		.contact {
-			text-align: center;
-			margin-top: 50px;
-		}
-
-		.contact h2 {
-			margin-bottom: 20px;
-		}
-
-		.contact-info {
-			max-width: 500px;
-			margin: 0 auto;
-		}
-
-		.contact-info p {
-			margin: 10px 0;
-			font-size: 10px;
-		}
-
-		.contact-info strong {
-			font-weight: bold;
-			margin-right: 5px;
-		}
-
-		.contact-info a {
-			text-decoration: none;
-		}
-
-		.contact-info a:hover {
-			text-decoration: underline;
-		}
-
-		.font-xs {
-			font-family: 'Arkeo BT W01 Condensed', sans-serif;
-		}
-
-
-		.team-partner {
-			text-align: center;
-			margin-top: 50px;
-			padding: 20px;
-		}
-
-		.team-partner h2 {
-			margin-bottom: 40px;
-		}
-
-		.partner-profiles {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-
-		.partner {
-			text-align: center;
-			margin: 20px;
-		}
-
-		.partner-name {
-			font-weight: bold;
-			margin-bottom: 5px;
-		}
-
-		.partner-role {
-			font-size: 0.8em;
-		}
-
-		#checkbox {
-			display: none;
-		}
-
-		#toggle-background {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			width: fit-content;
-			padding: 10px 20px;
-			background-color: rgb(46, 46, 46);
-			border-radius: 50px;
-			z-index: 1;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 10px;
-			color: white;
-			font-size: 0.9em;
-			font-weight: 600;
-			transition: all 0.3s;
-		}
-
-		#toggle-background svg path {
-			fill: white;
-		}
-
-		#toggle-background.active {
-			background-color: rgb(174, 0, 255);
-			box-shadow: 0px 0px 40px rgba(174, 0, 255, 0.438);
-		}
-
-	</style>
-</head>
-<body>
-
-	<nav class="navbar bg-dark">
-		<div class="container m-3">
-			<!-- Logo -->
-			<a class="navbar-brand" href="#"><img src="assets/images/icon.png" width="40" height="40"> XvonSteam Tech</a>
-			<!-- Name on the right side -->
-			<div class="navbar-text ">
-				<span>Yenzu Ai</span>
-			</div>
-			<!-- Background Color Switch Button -->
-		</div>
-	</nav>
-
-
-	<div class="container">
-		<div class="avatar">
-			<img src="assets/images/foto.png" alt="Profile Picture">
-			<div class="avatar-info">
-				<p class="avatar-name">Fanny Ruzaini Rahmanna Ari S.Kom</p>
-				<p class="avatar-role">Web Developer</p>
-			</div>
-		</div>
-
-		<div class="about">
-			<p class="h2">About Me</p>
-			<p style="font-size:14px;">Saya seorang web developer yang telah menjalankan karir freelance selama 6 tahun selama masa kuliah. Saya memiliki pengalaman dalam mengembangkan berbagai jenis situs web dan aplikasi web. Selain itu, saya juga memiliki keahlian dalam pemrograman frontend dan backend. Saya sangat antusias dalam mempelajari teknologi terbaru dan menciptakan solusi kreatif untuk masalah yang kompleks.</p>
-		</div>
-
-		<div class="work-experience">
-			<h2 class="text-center mb-5 h2">Work Experience</h2>
-			<ul class="work-experience-list offset-lg-3">
-				<li class="work-experience-item">
-					<span class="work-experience-date">Feb 2020 - Feb 2022</span>
-					<div class="work-experience-content">
-						<h3>Web Developer</h3>
-						<p>Lojikala.io, Tangerang, Jawa Barat</p>
-						<ul style="font-size:12px;">
-							<li>Pembuatan Website Merdisihombing Foundation, Language PHP</li>
-							<li>Pembuatan E-Commers Merdisihombing Foundation, Language PHP</li>
-							<li>Pembuatan Website Agwal offical, Language PHP</li>
-							<li>Pembuatan Website VidForward, CMS Wordpress</li>
-							<li>Pembuatan Aplikasi Sistem Antrian Klinik Fajar Jakarta Selatan, Language PHP</li>
-							<li>Pembuatan Website Office Klinik Fajar Jakarta Selatan, Language PHP</li>
-						</ul>
-					</div>
-				</li>
-				<li class="work-experience-item">
-					<span class="work-experience-date">Mar 2019 - Present</span>
-					<div class="work-experience-content">
-						<h3>Web Developer</h3>
-						<p>Xvonsteam Tech, Kota Madiun, Jawa Timur</p>
-						<ul style="font-size:12px;">
-							<li>Pembuatan Aplikasi Kasir Toko, Language PHP Framework Ci3</li>
-							<li>Pembuatan Aplikasi Kasir Showroom, Language PHP Framework Ci3</li>
-							<li>Pembuatan Aplikasi Antrian, Language PHP Framework Ci4</li>
-							<li>Pembuatan Aplikasi E-Commers, Language PHP Framework Laravel 10</li>
-							<li>Pembuatan Aplikasi Toko Online, Language PHP</li>
-							<li>Pembuatan Arduino Deteksi Suhu, Language Arduino, Language PHP</li>
-							<li>Pembuatan Apliaksi Android Kasir Saloon, Flutter</li>
-							<li>Pembuatan Aplikasi Sim Pramuka Universitas PGRI Madiun, Language PHP</li>
-							<li>Pembuatan Aplikasi Android Sim Pramuka Universitas PGRI Madiun, Kotlin</li>
-							<li>Pembuatan Aplikasi Android Absensi SMKN 1 Gemarang, PHP Converter Kotlin</li>
-							<li>Pembuatan Aplikasi Perpustakaan, Language PHP</li>
-							<li>Pembuatan Aplikasi Manager Surat, Language PHP</li>
-							<li>Pembuatan Aplikasi Reservasi Ruang Rapat, Language PHP Framework Yii</li>
-							<li>Pembuatan Aplikasi Reservasi Alun Alun Ngawi, Language PHP</li>
-							<li>Pembuatan Aplikasi Shopping Referral, Language PHP</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-
-		<div class="skills">
-			<h2>Skills</h2>
-			<div class="container">
-				<div class="row skill-icons">
-
-					<!-- Programming Languages -->
-					<p>Programming Languages</p>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML Icon" class="img-fluid skill-icon">
-						<p>HTML</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon" class="img-fluid skill-icon">
-						<p>CSS</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Icon" class="img-fluid skill-icon">
-						<p>JavaScript</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP Icon" class="img-fluid skill-icon">
-						<p>PHP</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=40669&format=png&color=000000" alt="C++ Icon" class="img-fluid skill-icon">
-						<p>C++</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=114474&format=png&color=000000" alt="Json Icon" class="img-fluid skill-icon">
-						<p>Json</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/kotlin.png" alt="Kotlin Icon" class="img-fluid skill-icon">
-						<p>Kotlin</p>
-					</div>
-
-					<!-- Databases -->
-					<p>Databases</p>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png&color=000000" alt="Mysql Icon" class="img-fluid skill-icon">
-						<p>MySQL</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=38561&format=png&color=000000" alt="PostgreSql Icon" class="img-fluid skill-icon">
-						<p>PostgreSql</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=GdDY9SVDvMjt&format=png&color=000000" alt="Navicat Icon" class="img-fluid skill-icon">
-						<p>Navicat</p>
-					</div>
-
-					<!-- Frameworks and Libraries -->
-					<p>Frameworks and Libraries</p>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js Icon" class="img-fluid skill-icon">
-						<p>React.js</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/next.png" alt="Next.js Icon" class="img-fluid skill-icon">
-						<p>Next.js</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js Icon" class="img-fluid skill-icon">
-						<p>Node.js</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/fluency/48/laravel.png" alt="Laravel Icon" class="img-fluid skill-icon">
-						<p>Laravel</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=100&id=r4UrHt1gLC2t&format=png&color=000000" width="50" alt="CodeIgniter Icon" class="img-fluid skill-icon">
-						<p>CodeIgniter</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=ewGOClUtmFX4&format=png&color=000000" width="50" alt="Flask Icon" class="img-fluid skill-icon">
-						<p>Flask</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express JS Icon" class="img-fluid skill-icon">
-						<p>Express JS</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=QBqFNfPPB2Kx&format=png&color=000000" alt="Sass Icon" class="img-fluid skill-icon">
-						<p>Sass</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=HKNzD81eiiSc&format=png&color=000000" alt="Jquery Icon" class="img-fluid skill-icon">
-						<p>Jquery</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwinds Icon" class="img-fluid skill-icon">
-						<p>Tailwinds</p>
-					</div>
-
-					<!-- Tools -->
-					<p>Tools</p>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/color/48/000000/wordpress.png" alt="WordPress Icon" class="img-fluid skill-icon">
-						<p>WordPress</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git Icon" class="img-fluid skill-icon">
-						<p>Git</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=13444&format=png&color=000000" alt="Arduino Icon" class="img-fluid skill-icon">
-						<p>Arduino</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=48455&format=png&color=000000" alt="Visual Code Icon" class="img-fluid skill-icon">
-						<p>Visual Code</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=6RHskkZGRABM&format=png&color=000000" alt="Sublime Text Icon" class="img-fluid skill-icon">
-						<p>Sublime Text</p>
-					</div>
-					<div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
-						<img src="https://img.icons8.com/?size=48&id=AZOZNnY73haj&format=png&color=000000" alt="Github Icon" class="img-fluid skill-icon">
-						<p>Github</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="team-partner text-center">
-			<h2>Team Partner</h2>
-			<div class="partner-profiles">
-				<div class="partner">
-					<img src="https://assets.riplabs.id/images/riplabs/Logo%20RipLabs.png" class="mb-2 img-fluid" style="width:100px; height:50px;" alt="Partner 1">
-					<p class="partner-name">RipLabs</p>
-					<p class="partner-role">Web Devoloper</p>
-				</div>
-				<div class="partner">
-					<img src="https://xvonsteam.github.io/assets/images/icon.png" class="mb-2 img-fluid" style="width:100px; height:90px;"  alt="Partner 2">
-					<p class="partner-name">Xvonsteam Tech</p>
-					<p class="partner-role">Founder & Web Devoloper</p>
-				</div>
-				<div class="partner">
-					<img src="https://pbs.twimg.com/profile_images/1488815917932769282/M1HZJ6kt_400x400.jpg" class="mb-2 img-fluid" style="width:100px; height:80px;"  alt="Partner 2">
-					<p class="partner-name">Matakala io</p>
-					<p class="partner-role">Web Devoloper</p>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="contact container">
-			<h2>Contact</h2>
-			<div class="contact-info">
-				<p><strong>WhatsApp:</strong> <a href="tel:+6287765191108">+6287765191108</a></p>
-				<p><strong>Email:</strong> <a href="mailto:xvonsteam@gmail.com">xvonsteam@gmail.com</a> / <a href="mailto:workspacefanny@gmail.com">workspacefanny@gmail.com</a></p>
-				<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fannyruzainirahmannaari/">fannyruzainirahmannaari</a></p>
-				<p><strong>Instagram:</strong> <a href="https://www.instagram.com/yenzu_ai">@yenzu_ai</a></p>
-				<p><strong>Twitter:</strong> <a href="https://twitter.com/yenzu_ai">@yenzu_ai</a></p>
-				<p><strong>Facebook:</strong> saya bisa jadi keong</p>
-				<p><strong>GitHub:</strong> <a href="https://github.com/xvonsteam">xvonsteam tech</a></p>
-				<p><strong>LINE:</strong> zazao</p>
-			</div>
-		</div>
-
+  <!-- Work Experience -->
+<div class="card mb-4">
+	<div class="card-header">
+	  <h3 class="card-title">💼 Pengalaman Kerja</h3>
 	</div>
-	<button id="toggle-background" class="btn btn-outline-secondary ms-3">
-		<svg class="slider" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-			<path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"></path>
-		</svg>
-	</button>
+	<div class="card-body">
+	  <div class="mb-4">
+		<h4 class="mb-1">Web Developer</h4>
+		<div class="text-secondary">Lojikala.io – Tangerang, Jawa Barat</div>
+		<div class="text-muted mb-2">Feb 2020 - Feb 2022</div>
+		<ul>
+		  <li>Pembuatan Website Merdisihombing Foundation (PHP)</li>
+		  <li>Pembuatan E-Commerce Merdisihombing Foundation (PHP)</li>
+		  <li>Pembuatan Website Agwal Official (PHP)</li>
+		  <li>Pembuatan Website VidForward (WordPress)</li>
+		  <li>Pembuatan Sistem Antrian Klinik Fajar Jakarta Selatan (PHP)</li>
+		  <li>Pembuatan Website Office Klinik Fajar Jakarta Selatan (PHP)</li>
+		</ul>
+	  </div>
+  
+	  <div>
+		<h4 class="mb-1">Web Developer</h4>
+		<div class="text-secondary">Xvonsteam Tech – Kota Madiun, Jawa Timur</div>
+		<div class="text-muted mb-2">Mar 2019 - Sekarang</div>
+		<ul>
+		  <li>Aplikasi Kasir Toko (PHP CI3)</li>
+		  <li>Aplikasi Kasir Showroom (PHP CI3)</li>
+		  <li>Aplikasi Antrian (PHP CI4)</li>
+		  <li>Aplikasi E-Commerce (Laravel 10)</li>
+		  <li>Aplikasi Toko Online (PHP)</li>
+		  <li>Arduino Deteksi Suhu (Arduino & PHP)</li>
+		  <li>App Android Kasir Saloon (Flutter)</li>
+		  <li>SIM Pramuka Universitas PGRI Madiun (PHP)</li>
+		  <li>App Android SIM Pramuka (Kotlin)</li>
+		  <li>App Android Absensi SMKN 1 Gemarang (PHP > Kotlin)</li>
+		  <li>Aplikasi Perpustakaan (PHP)</li>
+		  <li>Aplikasi Manager Surat (PHP)</li>
+		  <li>Reservasi Ruang Rapat (PHP Yii)</li>
+		  <li>Reservasi Alun-Alun Ngawi (PHP)</li>
+		  <li>Shopping Referral App (PHP)</li>
+		</ul>
+	  </div>
+	</div>
+  </div>
+  
 
-	<!-- Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-	<script>
-		const toggleBackgroundBtn = document.getElementById('toggle-background');
-		const body = document.body;
+<!-- Skills -->
+<div class="card mb-4">
+	<div class="card-header">
+	  <h3 class="card-title">🛠️ Skills</h3>
+	</div>
+	<div class="card-body">
+	  <!-- Programming Languages -->
+	  <h4 class="mb-2">Programming Languages</h4>
+	  <div class="row g-2">
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-brand-html5 me-1"></i> HTML</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-brand-css3 me-1"></i> CSS</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-brand-javascript me-1"></i> JavaScript</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-brand-php me-1"></i> PHP</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-code me-1"></i> C++</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-code me-1"></i> JSON</div>
+		<div class="col-auto mx-2 badge bg-primary-lt"><i class="ti ti-brand-kotlin me-1"></i> Kotlin</div>
+	  </div>
+  
+	  <!-- Databases -->
+	  <h4 class="mt-4 mb-2">Databases</h4>
+	  <div class="row g-2">
+		<div class="col-auto mx-2 badge bg-success-lt"><i class="ti ti-database me-1"></i> MySQL</div>
+		<div class="col-auto mx-2 badge bg-success-lt"><i class="ti ti-database-export me-1"></i> PostgreSQL</div>
+		<div class="col-auto mx-2 badge bg-success-lt"><i class="ti ti-cloud me-1"></i> Navicat</div>
+	  </div>
+  
+	  <!-- Frameworks & Libraries -->
+	  <h4 class="mt-4 mb-2">Frameworks & Libraries</h4>
+	  <div class="row g-2">
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-brand-react me-1"></i> React.js</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> Next.js</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-brand-nodejs me-1"></i> Node.js</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-brand-laravel me-1"></i> Laravel</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> CodeIgniter</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> Flask</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> Express.js</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-brand-sass me-1"></i> Sass</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> jQuery</div>
+		<div class="col-auto mx-2 badge bg-info-lt"><i class="ti ti-code me-1"></i> Tailwind</div>
+	  </div>
+  
+	  <!-- Tools -->
+	  <h4 class="mt-4 mb-2">Tools</h4>
+	  <div class="row g-2">
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-brand-wordpress me-1"></i> WordPress</div>
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-brand-git me-1"></i> Git</div>
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-brand-arduino me-1"></i> Arduino</div>
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-code me-1"></i> Visual Studio Code</div>
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-code me-1"></i> Sublime Text</div>
+		<div class="col-auto mx-2 badge bg-yellow-lt"><i class="ti ti-brand-github me-1"></i> GitHub</div>
+	  </div>
+	</div>
+  </div>
 
-    // Set initial background color and text color
-		if (toggleBackgroundBtn.classList.contains('active')) {
-        toggleColors(true); // Activate colors
-    } else {
-        toggleColors(false); // Deactivate colors
-    }
+  <!-- Team Partner -->
+<div class="card mb-4">
+	<div class="card-header">
+	  <h3 class="card-title">🤝 Team Partner</h3>
+	</div>
+	<div class="card-body">
+	  <div class="row g-3">
+		
+		<!-- Partner 1 -->
+		<div class="col-md-4">
+		  <div class="p-3">
+			<div class="card-body text-center">
+				<img src="assets/images/Logo RipLabs.png" class="img-fluid rounded" width="90">
+			  <h4 class="card-title mb-1">RipLabs</h4>
+			</div>
+		  </div>
+		</div>
+  
+		<!-- Partner 3 -->
+		<div class="col-md-4">
+		  <div class="p-3">
+			<div class="card-body text-center">
+				<img src="assets/images/img-partner-cvmilenial.jpg" class="img-fluid rounded" width="90">
+			  <h4 class="card-title mb-1">CV Milenial</h4>
+			</div>
+		  </div>
+		</div>
+  
+	  </div>
+	</div>
+  </div>
+  
+  
 
-    toggleBackgroundBtn.addEventListener('click', () => {
-    	toggleBackgroundBtn.classList.toggle('active');
-    	if (toggleBackgroundBtn.classList.contains('active')) {
-            toggleColors(true); // Activate colors
-        } else {
-            toggleColors(false); // Deactivate colors
-        }
-    });
+<!-- Contact -->
+<div class="card mb-4">
+	<div class="card-header">
+	  <h3 class="card-title">📞 Contact</h3>
+	</div>
+	<div class="card-body">
+	  <ul class="list-unstyled">
+		<li class="mb-2">
+		  <i class="ti ti-brand-whatsapp me-2 text-success"></i>
+		  <strong>WhatsApp:</strong> +62 877-6519-1108
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-mail me-2 text-danger"></i>
+		  <strong>Email:</strong> <a href="mailto:xvonsteam@gmail.com">xvonsteam@gmail.com</a> / <a href="mailto:workspacefanny@gmail.com">workspacefanny@gmail.com</a>
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-brand-linkedin me-2 text-primary"></i>
+		  <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fannyruzainirahmannaari" target="_blank">fannyruzainirahmannaari</a>
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-brand-instagram me-2 text-pink"></i>
+		  <strong>Instagram:</strong> <a href="https://instagram.com/yenzu_ai" target="_blank">@yenzu_ai</a>
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-brand-twitter me-2 text-info"></i>
+		  <strong>Twitter:</strong> <a href="https://twitter.com/yenzu_ai" target="_blank">@yenzu_ai</a>
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-brand-facebook me-2 text-blue"></i>
+		  <strong>Facebook:</strong> saya bisa jadi keong
+		</li>
+		<li class="mb-2">
+		  <i class="ti ti-brand-github me-2"></i>
+		  <strong>GitHub:</strong> <a href="https://github.com/xvonsteam" target="_blank">xvonsteam tech</a>
+		</li>
+		<li>
+		  <i class="ti ti-message me-2 text-green"></i>
+		  <strong>LINE:</strong> zazao
+		</li>
+	  </ul>
+	</div>
+  </div>
+  
 
-    function toggleColors(isActive) {
-    	if (isActive) {
-    		body.style.backgroundColor = 'white';
-    		body.style.color = 'black';
-    	} else {
-    		body.style.backgroundColor = 'black';
-    		body.style.color = 'white';
-    	}
-    }
-</script>
+      </div>
+    </div>
 
-
-</body>
+    <script src="https://unpkg.com/@tabler/core@latest/dist/js/tabler.min.js"></script>
+  </body>
 </html>

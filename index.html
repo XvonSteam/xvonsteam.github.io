@@ -4,130 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Fanny Ruzaini Rahmanna Ari S.Kom</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+
     <style>
-        /* Reset dan Tampilan Dasar */
+        /* Pengaturan Font Global dan Latar Belakang */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #f4f7f6; /* Latar belakang abu-abu muda */
             color: #333;
             margin: 0;
             padding: 0;
         }
 
-        /* Kontainer Utama CV */
+        /* Kontainer utama yang terlihat seperti selembar kertas */
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 30px auto;
             background-color: #ffffff;
-            padding: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Untuk menjaga border-radius */
         }
 
-        /* Header (Info Kontak) */
-        .header {
-            text-align: left;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin: 0 0 5px 0;
-            color: #222;
-        }
-
-        .header .title {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* Desain Dua Kolom menggunakan Flexbox */
+        .cv-body {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            flex-wrap: wrap; /* Memastikan bisa wrap di layar kecil */
         }
 
-        .contact-info li {
-            font-size: 0.95rem;
-            color: #444;
+        /* Kolom Kiri (Sidebar) */
+        .sidebar {
+            flex: 1; /* Mengambil sisa ruang */
+            min-width: 280px; /* Lebar minimum */
+            background-color: #f8f9fa; /* Warna sidebar sedikit beda */
+            padding: 30px;
+            border-right: 1px solid #e9ecef;
         }
 
-        .contact-info a {
-            text-decoration: none;
-            color: #0056b3; /* Warna biru profesional */
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
+        /* Kolom Kanan (Konten Utama) */
+        .main-content {
+            flex: 2; /* 2x lebih lebar dari sidebar */
+            padding: 30px;
         }
 
-        /* Semua Bagian (Skills, Pengalaman, dll.) */
-        .section {
+        /* Header di dalam Sidebar */
+        .profile-header {
+            text-align: left;
             margin-bottom: 30px;
         }
 
+        .profile-header h1 {
+            font-size: 2.2rem;
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .profile-header .title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0056b3; /* Biru profesional */
+            margin-bottom: 20px;
+        }
+
+        /* Judul Bagian (Keahlian, Pengalaman, dll) */
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #333;
+            color: #34495e;
             border-bottom: 2px solid #0056b3;
             padding-bottom: 5px;
+            margin-top: 0;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        /* Bagian Pengalaman & Proyek */
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0 0 5px 0;
-            color: #0056b3;
-        }
-
-        .item .sub-heading {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #444;
-            margin: 0 0 10px 0;
-        }
-
-        .item .date {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .item ul {
-            padding-left: 20px;
-            margin-top: 10px;
-            color: #555;
-        }
         
-        .item li {
-            margin-bottom: 5px;
+        /* Daftar Kontak dengan Ikon */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-        /* Bagian Keahlian */
-        .skills-section h4 {
-            font-size: 1rem;
-            font-weight: 600;
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .contact-list i.ti {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            color: #0056b3;
+            width: 20px; /* Memberi jarak ikon yang rata */
+            text-align: center;
+        }
+        .contact-list a {
+            text-decoration: none;
             color: #333;
-            margin-top: 15px;
-            margin-bottom: 10px;
+            word-break: break-all; /* Mencegah link panjang merusak layout */
+        }
+        .contact-list a:hover {
+            color: #0056b3;
+            text-decoration: underline;
         }
 
+        /* Daftar Keahlian (Pills/Badges) */
         .skills-list {
             list-style: none;
             padding: 0;
@@ -136,41 +119,93 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .skills-list li {
-            background-color: #f0f0f0;
-            padding: 5px 12px;
+            background-color: #e9ecef;
+            color: #34495e;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
         }
+        .skills-list h4 {
+            width: 100%;
+            margin: 10px 0 5px 0;
+            font-size: 1rem;
+        }
 
-        /* Cetak (Print) */
+        /* Styling Item Pekerjaan */
+        .job-item {
+            margin-bottom: 25px;
+        }
+        .job-item:last-child {
+            margin-bottom: 0;
+        }
+        .job-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 2px 0;
+            color: #0056b3;
+        }
+        .job-item .subheading {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .job-item .date {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .job-item ul {
+            padding-left: 20px;
+            margin: 0;
+            color: #444;
+        }
+        .job-item li {
+            margin-bottom: 5px;
+        }
+
+        /* Media Query untuk Responsif (Penting untuk ATS & HP) */
+        @media (max-width: 768px) {
+            .cv-body {
+                flex-direction: column; /* Menumpuk kolom secara vertikal */
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+        }
+        
+        /* Pengaturan Cetak (Print) */
         @media print {
             body {
                 background-color: #ffffff;
-                font-family: 'Times New Roman', Times, serif; /* Font serif standar untuk cetak */
+                font-family: 'Times New Roman', Times, serif;
             }
             .container {
-                width: 100%;
+                box-shadow: none;
                 margin: 0;
                 padding: 0;
-                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
                 border-radius: 0;
             }
-            .contact-info a {
-                color: #000;
-                text-decoration: none;
+            .cv-body {
+                /* Selalu satu kolom saat cetak */
+                flex-direction: column; 
+            }
+            .sidebar {
+                background-color: #ffffff !important;
+                border: none;
             }
             .skills-list li {
-                background-color: #eee;
+                 background-color: #eee !important;
             }
-            .section-title {
-                color: #000;
-                border-bottom: 2px solid #000;
-            }
-            .item h3 {
-                color: #000;
+            a {
+                text-decoration: none;
+                color: #000 !important;
             }
         }
     </style>
@@ -178,102 +213,125 @@
 <body>
 
     <div class="container">
-        <header class="header">
-            <h1>Fanny Ruzaini Rahmanna Ari S.Kom</h1>
-            <div class="title">Web Developer</div>
+        <div class="cv-body">
             
-            <ul class="contact-info">
-                <li>Madiun, Jawa Timur</li>
-                <li><a href="tel:+6287765191108">+62 877-6519-1108</a></li>
-                <li><a href="mailto:xvonsteam@gmail.com">xvonsteam@gmail.com</a></li>
-                <li><a href="https://linkedin.com/in/fannyruzainirahmannaari" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/xvonsteam" target="_blank">GitHub</a></li>
-                <li><a href="https://xvonsteam.github.io" target="_blank">Website</a></li>
-            </ul>
-        </header>
-
-        <main>
-            <section class="section skills-section">
-                <h2 class="section-title">Keahlian Teknis</h2>
+            <aside class="sidebar">
                 
-                <h4>Bahasa Pemrograman</h4>
-                <ul class="skills-list">
-                    <li>PHP</li>
-                    <li>JavaScript</li>
-                    <li>HTML/CSS</li>
-                    <li>Kotlin</li>
-                </ul>
+                <header class="profile-header">
+                    <h1>Fanny Ruzaini R. A., S.Kom</h1>
+                    <div class="title">Web Developer</div>
+                </header>
 
-                <h4>Frameworks & Database</h4>
-                <ul class="skills-list">
-                    <li>Laravel</li>
-                    <li>CodeIgniter</li>
-                    <li>React.js</li>
-                    <li>MySQL</li>
-                    <li>PostgreSQL</li>
-                    <li>Flutter</li>
-                </ul>
+                <section class="contact-section">
+                    <h2 class="section-title">Kontak</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="ti ti-phone"></i>
+                            <a href="tel:+6287765191108">+62 877-6519-1108</a>
+                        </li>
+                        <li>
+                            <i class="ti ti-mail"></i>
+                            <a href="mailto:xvonsteam@gmail.com">xvonsteam@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="ti ti-map-pin"></i>
+                            <span>Madiun, Jawa Timur</span>
+                        </li>
+                        <li>
+                            <i class="ti ti-world-www"></i>
+                            <a href="https://xvonsteam.github.io" target="_blank">xvonsteam.github.io</a>
+                        </li>
+                        <li>
+                            <i class="ti ti-brand-linkedin"></i>
+                            <a href="https://linkedin.com/in/fannyruzainirahmannaari" target="_blank">LinkedIn</a>
+                        </li>
+                        <li>
+                            <i class="ti ti-brand-github"></i>
+                            <a href="https://github.com/xvonsteam" target="_blank">GitHub</a>
+                        </li>
+                    </ul>
+                </section>
 
-                <h4>Tools & Lainnya</h4>
-                <ul class="skills-list">
-                    <li>Git/GitHub</li>
-                    <li>WordPress</li>
-                    <li>Visual Studio Code</li>
-                    <li>Sublime Text</li>
-                </ul>
-            </section>
+                <section class="skills-section">
+                    <h2 class="section-title">Keahlian Teknis</h2>
+                    <ul class="skills-list">
+                        <h4>Bahasa</h4>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>Kotlin</li>
+                        
+                        <h4>Frameworks & DB</h4>
+                        <li>Laravel</li>
+                        <li>CodeIgniter</li>
+                        <li>React.js</li>
+                        <li>Flutter</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        
+                        <h4>Tools</h4>
+                        <li>Git/GitHub</li>
+                        <li>WordPress</li>
+                        <li>VS Code</li>
+                    </ul>
+                </section>
 
-            <section class="section">
-                <h2 class="section-title">Pengalaman Kerja</h2>
+            </aside>
+
+            <main class="main-content">
                 
-                <article class="item">
-                    <h3>Web Developer (Freelance/In-House)</h3>
-                    <div class="sub-heading">Xvonsteam Tech – Kota Madiun, Jawa Timur</div>
-                    <div class="date">(Maret 2019 - Sekarang)</div>
-                    <ul>
-                        <li>Pengembangan Aplikasi Kasir Toko, Showroom, dan Salon (PHP CI3, Flutter).</li>
-                        <li>Pembuatan Aplikasi Antrian (PHP CI4), E-Commerce (Laravel 10), dan Toko Online.</li>
-                        <li>Pengembangan SIM Pramuka (Web & Android - PHP, Kotlin) dan Absensi Sekolah.</li>
-                        <li>Proyek Khusus: Arduino Deteksi Suhu, Reservasi Ruang Rapat & Alun-Alun Ngawi.</li>
-                    </ul>
-                </article>
+                <section class="experience-section">
+                    <h2 class="section-title">Pengalaman Kerja</h2>
 
-                <article class="item">
-                    <h3>Web Developer (Full-time)</h3>
-                    <div class="sub-heading">Lojikala.io – Tangerang, Banten</div>
-                    <div class="date">(Februari 2020 - Februari 2022)</div>
-                    <ul>
-                        <li>Pembuatan Website Merdisihombing Foundation (PHP).</li>
-                        <li>Pembuatan E-Commerce Merdisihombing Foundation (PHP).</li>
-                        <li>Pembuatan Sistem Antrian Klinik Fajar Jakarta Selatan (PHP).</li>
-                        <li>Pembuatan Website Office Klinik Fajar Jakarta Selatan (PHP).</li>
-                    </ul>
-                </article>
-            </section>
+                    <article class="job-item">
+                        <h3>Web Developer (Freelance/In-House)</h3>
+                        <div class="subheading">Xvonsteam Tech – Kota Madiun, Jawa Timur</div>
+                        <div class="date">Maret 2019 - Sekarang</div>
+                        <ul>
+                            <li>Pengembangan Aplikasi Kasir Toko, Showroom, dan Salon (PHP CI3, Flutter).</li>
+                            <li>Pembuatan Aplikasi Antrian (PHP CI4), E-Commerce (Laravel 10), dan Toko Online.</li>
+                            <li>Pengembangan SIM Pramuka (Web & Android - PHP, Kotlin) dan Absensi Sekolah.</li>
+                            <li>Proyek Khusus: Arduino Deteksi Suhu, Reservasi Ruang Rapat & Alun-Alun Ngawi.</li>
+                        </ul>
+                    </article>
 
-            <section class="section">
-                <h2 class="section-title">Proyek</h2>
+                    <article class="job-item">
+                        <h3>Web Developer (Full-time)</h3>
+                        <div class="subheading">Lojikala.io – Tangerang, Banten</div>
+                        <div class="date">Februari 2020 - Februari 2022</div>
+                        <ul>
+                            <li>Pembuatan Website Merdisihombing Foundation (PHP).</li>
+                            <li>Pembuatan E-Commerce Merdisihombing Foundation (PHP).</li>
+                            <li>Pembuatan Sistem Antrian Klinik Fajar Jakarta Selatan (PHP).</li>
+                            <li>Pembuatan Website Office Klinik Fajar Jakarta Selatan (PHP).</li>
+                        </ul>
+                    </article>
+                </section>
 
-                <article class="item">
-                    <h3>Aplikasi Chat Real-time (PHP & WebSocket)</h3>
-                    <div class="sub-heading">Proyek Pribadi</div>
-                    <ul>
-                        <li>Membangun platform komunikasi instan dengan fitur modern.</li>
-                        <li>Fitur utama termasuk notifikasi real-time dan autentikasi pengguna.</li>
-                        <li><strong>Teknologi:</strong> PHP (Backend), WebSocket (Real-time), JavaScript, HTML, CSS.</li>
-                        <li><strong>Link:</strong> <a href="https://xvonsteam.github.io/chat" target="_blank">xvonsteam.github.io/chat</a></li>
-                    </ul>
-                </article>
-            </section>
+                <section class="project-section">
+                    <h2 class="section-title">Proyek Unggulan</h2>
 
-            <section class="section">
-                <h2 class="section-title">Pendidikan</h2>
-                
-                <article class="item">
-                    <h3>Sarjana Komputer (S.Kom)</h3>
-                    <div class="sub-heading">Nama Universitas Anda</div> <div class="date">(Tahun Lulus)</div> </article>
-            </section>
-        </main>
+                    <article class="job-item">
+                        <h3>Aplikasi Chat Real-time (PHP & WebSocket)</h3>
+                        <div class="subheading">Proyek Pribadi</div>
+                        <ul>
+                            <li>Membangun platform komunikasi instan dengan fitur modern.</li>
+                            <li>Fitur utama termasuk notifikasi real-time dan autentikasi pengguna.</li>
+                            <li><strong>Teknologi:</strong> PHP, WebSocket, JavaScript, HTML, CSS.</li>
+                            <li><strong>Link:</strong> <a href="https://xvonsteam.github.io/chat" target="_blank">xvonsteam.github.io/chat</a></li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="education-section">
+                    <h2 class="section-title">Pendidikan</h2>
+                    <article class="job-item">
+                        <h3>Sarjana Komputer (S.Kom)</h3>
+                        <div class="subheading">Universitas PGRI Madiun</div> <div class="date">Lulus 2019</div> </article>
+                </section>
+
+            </main>
+        </div>
     </div>
 
 </body>
